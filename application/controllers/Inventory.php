@@ -18,18 +18,27 @@ class Inventory extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('InventoryModel');
+		$this->model = $this->InventoryModel;
+	}
+
 	public function index()
 	{
-		$this->load->view('inventory/index.html');
+		$this->model->get_rows();		
+		// echo "<pre>"; print_r($this->model->rows); exit;
+		$data = array('model' => $this->model);
+		$this->load->view('inventory/index', $data);
 	}
 
 	public function create()
 	{
-		$this->load->view('inventory/create.html');
+		$this->load->view('inventory/create.php');
 	}
 
 	public function edit()
 	{
-		$this->load->view('inventory/edit.html');
+		$this->load->view('inventory/edit.php');
 	}
 }
