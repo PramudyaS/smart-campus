@@ -34,11 +34,16 @@ class Inventory extends CI_Controller {
 
 	public function create()
 	{
-		$this->load->view('inventory/create.php');
+		$this->load->view('inventory/create');
 	}
 
 	public function edit()
 	{
-		$this->load->view('inventory/edit.php');
+		$this->load->view('inventory/edit');
 	}
+
+    public function delete($id)
+    {
+        echo "Function Delete()";
+    }
 }

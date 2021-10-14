@@ -1,6 +1,6 @@
 RewriteEngine On
 # Here comes your base directory
-RewriteBase /smart-campus/
+RewriteBase /campus/smart-campus/
 RewriteCond $1 !^(index\\.php|resources|robots\\.txt)
 # Deny access from .htaccess
 RewriteRule ^\.htaccess$ - [F]

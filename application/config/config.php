@@ -36,7 +36,7 @@ $config['base_url'] = 'http://localhost:8888/campus/smart-campus/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'inventory/index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
