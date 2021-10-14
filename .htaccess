@@ -1,0 +1,14 @@
+RewriteEngine On
+# Here comes your base directory
+RewriteBase /smart-campus/
+RewriteCond $1 !^(index\\.php|resources|robots\\.txt)
+# Deny access from .htaccess
+RewriteRule ^\.htaccess$ - [F]
+# Missing favicon should not cause Xaraya to be loaded..
+RewriteRule ^favicon\.ico - [L]
+# Existing files shouldn't get rewritten
+# but the rest can go to Xaraya
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+) index.php/$1 [L]
