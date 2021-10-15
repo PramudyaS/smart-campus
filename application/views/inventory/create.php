@@ -23,7 +23,7 @@
 				<h3 class="font-semibold text-lg">Form Barang</h3>
 				<p class="text-sm text-gray-500">Form untuk menambah data barang baru</p>
 				<div class="border-t-2 mt-2"></div>
-				<form class="w-full mt-4">
+				<form action="<?php echo site_url('inventory/store')?>" method="post" class="w-full mt-4">
 					<div class="flex flex-wrap -mx-3 mb-6">
 						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">

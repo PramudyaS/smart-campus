@@ -42,10 +42,27 @@ class Inventory extends CI_Controller {
 		$this->load->view('inventory/create');
 	}
 
+    public function store()
+    {
+        // Store
+        $this->model->name = $_POST['barang'];
+
+        $this->model->insert();
+
+        $this->model->get_rows();
+        $data = array('model' => $this->model);
+        $this->load->view('inventory/index', $data);
+    }
+
 	public function edit()
 	{
 		$this->load->view('inventory/edit');
 	}
+
+    public function update()
+    {
+        // Update
+    }
 
     public function delete($id)
     {

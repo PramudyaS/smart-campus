@@ -49,6 +49,13 @@
             $this->rows = $rows;
         }
 
+        public function insert(){
+            $sql = sprintf("INSERT INTO inventories(name) VALUES('%s')",
+                $this->name
+            );
+
+            $this->db->query($sql);
+        }
         public function _attributeLabels(){
 		return [
 			'id' => 'ID: ',
