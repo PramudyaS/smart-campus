@@ -24,9 +24,10 @@
             </div>
             <div class="bg-white shadow-md rounded my-6 px-4 py-2">
                 <h3 class="font-semibold text-lg">Data Barang</h3>
+                <form action="<?= site_url('inventory/index') ?>" method="post">
                 <div class="flex space-x-2">
                     <div class="w-4/12 mt-2 mb-2 border-2 py-1 px-3 flex justify-between rounded-md">
-                        <input class="flex-grow outline-none text-gray-600 focus:text-blue-600" type="text" placeholder="Cari Barang..." />
+                        <input class="flex-grow outline-none text-gray-600 focus:text-blue-600" type="text" name="barang" placeholder="Cari Barang..." />
                     </div>
                     <div class="mt-2 mb-2 border-2 py-1 px-3 flex justify-between rounded-md">
                         <select name="" id="" class="flex-grow outline-none text-gray-600 focus:text-blue-600">
@@ -34,11 +35,12 @@
                         </select>
                     </div>
                     <div class="py-3 px-2">
-                        <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-2 rounded outline-none focus:outline-none ease-linear transition-all duration-150" type="button">
-                            Cari <span class="fa fa-search"></span>
-                        </button>
+                        <input type="submit" name="search" value="Search" class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-2 rounded outline-none focus:outline-none ease-linear transition-all duration-150">
+<!--                            Cari <span class="fa fa-search"></span>-->
+<!--                        </input>-->
                     </div>
                 </div>
+                </form>
                 <table class="min-w-max w-full table-auto mt-2">
                     <thead>
                     <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">

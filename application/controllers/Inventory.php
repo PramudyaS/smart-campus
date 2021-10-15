@@ -26,11 +26,16 @@ class Inventory extends CI_Controller {
 
 	public function index()
 	{
-		$this->model->get_rows();		
-		// echo "<pre>"; print_r($this->model->rows); exit;
-		$data = array('model' => $this->model);
-		$this->load->view('inventory/index', $data);
-	}
+        if(isset($_POST['search'])){
+            $this->model->name = $_POST['barang'];
+            $this->model->get_search();
+        }else{
+            $this->model->get_rows();
+            // echo "<pre>"; print_r($this->model->rows); exit;
+        }
+        $data = array('model' => $this->model);
+        $this->load->view('inventory/index', $data);
+    }
 
 	public function create()
 	{

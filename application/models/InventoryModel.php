@@ -37,6 +37,18 @@
             $this->rows = $rows;
         }
 
+        public function get_search(){
+            $sql = "Select * from inventories where name like '%$this->name%'";
+
+            $query = $this->db->query($sql);
+            $rows = array();
+            foreach($query->result() as $row){
+                $rows[] = $row;
+            }
+
+            $this->rows = $rows;
+        }
+
         public function _attributeLabels(){
 		return [
 			'id' => 'ID: ',
