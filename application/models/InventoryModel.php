@@ -65,7 +65,8 @@
                 $this->name,
                 $this->category,
                 $this->device_status,
-                $this->jumlah
+                $this->jumlah,
+				$this->id
             );
 
             $this->db->query($sql);

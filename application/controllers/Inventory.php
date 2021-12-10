@@ -63,8 +63,7 @@ class Inventory extends CI_Controller {
     public function edit(){
         $kode = $this->uri->segment(3);
         $this->model->get_row($kode);
-
-        $this->load->view('inventory/edit', ['model' => $this->model]);
+        $this->load->view('inventory/edit', ['model' => $this->model->row]);
     }
 
     public function update(){
@@ -73,10 +72,11 @@ class Inventory extends CI_Controller {
         $this->model->name = $this->input->post('txt_name');
         $this->model->category = $this->input->post('category');
         $this->model->device_status = $this->input->post('status');
-        $this->model->jumlah = $this->input->post('txt_jumlah');
+        $this->model->jumlah = $this->input->post('jumlah');
 
         $this->model->update();
-        $this->load->view('inventory/index', ['model' => $this->model]);
+        $this->load->helper('url');
+		redirect('inventory/');
     }
 
     public function delete()

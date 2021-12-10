@@ -26,6 +26,10 @@
                     <a href="<?php echo site_url('/inventory/laporan_pdf/');?>" target="_blank" class="bg-red-600 px-2 py-2 rounded-md text-white float-right border-white border-2 hover:bg-red-700">
                         Export PDF <span class="fa fa-file-pdf"></span>
                     </a>
+					<a href="<?php echo site_url('/dashboard');?>" target="_blank" class="bg-blue-600 px-2 py-2
+					rounded-md text-white float-right border-white border-2 hover:bg-blue-700">
+						Page Dashboard <span class="fa fa-rocket"></span>
+					</a>
                 </div>
             </div>
             <div class="bg-white shadow-md rounded my-6 px-4 py-2">
@@ -67,10 +71,10 @@
                                 <?= $row->category;?>
                             </td>
                             <td class="py-3 px-6 text-center">
-                                <?php if($row->device_status == "ON"){ ?>
-                                    <span class="bg-green-600 text-white py-1 px-3 rounded-full text-xs"><?= $row->device_status;?></span>
+                                <?php if($row->device_status == 1){ ?>
+                                    <span class="bg-green-600 text-white py-1 px-3 rounded-full text-xs">ON</span>
                                 <?php }else{ ?>
-                                    <span class="bg-red-600 text-white py-1 px-3 rounded-full text-xs"><?= $row->device_status;?></span>
+                                    <span class="bg-red-600 text-white py-1 px-3 rounded-full text-xs">OFF</span>
                                 <?php } ?>
                             </td>
                             <td class="py-3 px-6 text-center">

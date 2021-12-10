@@ -35,7 +35,7 @@
 				<h1 class="text-2xl font-bold">Dashboard Analytics</h1>
 			</div>
 			<div class="flex-1">
-				<a href="<?php echo site_url('/inventory/create/');?>" class="bg-purple-600 px-2 py-2 rounded-md text-white float-right border-white border-2 hover:bg-purple-700">
+				<a href="<?php echo site_url('/inventory/');?>" class="bg-purple-600 px-2 py-2 rounded-md text-white float-right border-white border-2 hover:bg-purple-700">
 					Page Barang <span class="fa fa-boxes"></span>
 				</a>
 			</div>
@@ -71,10 +71,10 @@
 							<?= $row->category;?>
 						</td>
 						<td class="py-3 px-6 text-center">
-							<?php if($row->device_status == "ON"){ ?>
-								<span class="bg-green-600 text-white py-1 px-3 rounded-full text-xs"><?= $row->device_status;?></span>
+							<?php if($row->device_status == 1){ ?>
+								<span class="bg-green-600 text-white py-1 px-3 rounded-full text-xs">ON</span>
 							<?php }else{ ?>
-								<span class="bg-red-600 text-white py-1 px-3 rounded-full text-xs"><?= $row->device_status;?></span>
+								<span class="bg-red-600 text-white py-1 px-3 rounded-full text-xs">OFF</span>
 							<?php } ?>
 						</td>
 						<td class="py-3 px-6 text-center">
