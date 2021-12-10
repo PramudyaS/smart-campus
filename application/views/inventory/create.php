@@ -45,7 +45,7 @@
 								Kategori
 							</label>
 							<select class="block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category" name="category">
-								<option>New Mexico</option>
+								<option selected>New Mexico</option>
 								<option>Missouri</option>
 								<option>Texas</option>
 							</select>
@@ -59,7 +59,7 @@
 							</label>
 							<div class="relative">
 								<select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="status" name="status">
-									<option>ON</option>
+									<option selected>ON</option>
 									<option>OFF</option>
 								</select>
 								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
