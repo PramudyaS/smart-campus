@@ -77,6 +77,42 @@
             $this->db->query($sql);
         }
 
+		public function GroupByCategory()
+		{
+			$sql = "SELECT category,SUM(jumlah) as jumlah FROM inventories GROUP BY category";
+			$query = $this->db->query($sql);
+			$rows = array();
+			foreach($query->result() as $row){
+				$rows[] = $row;
+			}
+
+			$this->rows = $rows;
+		}
+
+		public function OrderByJumlah()
+		{
+			$sql = "SELECT name,jumlah FROM inventories ORDER BY jumlah DESC LIMIT 5";
+			$query = $this->db->query($sql);
+			$rows = array();
+			foreach($query->result() as $row){
+				$rows[] = $row;
+			}
+
+			$this->rows = $rows;
+		}
+
+		public function current_limit(){
+			$sql = "SELECT * FROM inventories ORDER BY id DESC LIMIT 5";
+
+			$query = $this->db->query($sql);
+			$rows = array();
+			foreach($query->result() as $row){
+				$rows[] = $row;
+			}
+
+			$this->rows = $rows;
+		}
+
         public function _attributeLabels(){
 		return [
 			'id' => 'ID: ',
