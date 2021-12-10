@@ -118,4 +118,18 @@ class Inventory extends CI_Controller {
 
         $writer->save('php://output');
     }
+
+    public function laporan_pdf(){
+
+        $this->model->get_rows();
+        $data = ['data' => $this->model];
+    
+        $this->load->library('pdf');
+    
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Laporan Inventory_".date('Y-m-d').".pdf";
+        $this->pdf->load_view('inventory/laporan_pdf', $data);
+    
+    
+    }
 }
