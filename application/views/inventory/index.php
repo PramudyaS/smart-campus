@@ -20,6 +20,9 @@
                     <a href="<?php echo site_url('/inventory/create/');?>" class="bg-purple-600 px-2 py-2 rounded-md text-white float-right border-white border-2 hover:bg-purple-700">
                         Buat Baru <span class="fa fa-plus-circle"></span>
                     </a>
+                    <a href="<?php echo site_url('/inventory/export_excel/');?>" class="bg-green-600 px-2 py-2 rounded-md text-white float-right border-white border-2 hover:bg-green-700">
+                        Export Excel <span class="fa fa-file-excel"></span>
+                    </a>
                 </div>
             </div>
             <div class="bg-white shadow-md rounded my-6 px-4 py-2">

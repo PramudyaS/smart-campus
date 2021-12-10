@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// require('./application/third_party/phpoffice/vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class Inventory extends CI_Controller {
 
 	/**
@@ -79,5 +84,38 @@ class Inventory extends CI_Controller {
         $kode = $this->uri->segment(3);
         $this->model->delete($kode);
         redirect('inventory/index');
+    }
+
+    public function export_excel()
+    {
+        $this->model->get_rows();
+        $inventories = $this->model;
+
+        $spreadsheet = new Spreadsheet;
+
+        $spreadsheet->setActiveSheetIndex(0)
+                    ->setCellValue('A1', 'Nama')
+                    ->setCellValue('B1', 'Kategori')
+                    ->setCellValue('C1', 'Device Status')
+                    ->setCellValue('D1', 'Jumlah');
+
+        $kolom = 2;
+        foreach($inventories->rows as $inventory) {
+             $spreadsheet->setActiveSheetIndex(0)
+                         ->setCellValue('A' . $kolom, $inventory->name)
+                         ->setCellValue('B' . $kolom, $inventory->category)
+                         ->setCellValue('C' . $kolom, $inventory->device_status)
+                         ->setCellValue('D' . $kolom, $inventory->jumlah);
+
+             $kolom++;
+        }
+
+        $writer = new Xlsx($spreadsheet);
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="Report Inventory_'.date('Y-m-d').'.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 }
