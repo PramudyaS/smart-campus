@@ -29,14 +29,14 @@
 							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
 								Nama
 							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="txt_name" name="txt_name" type="text" placeholder="Jane">
 							<p class="text-red-500 text-xs italic">Please fill out this field.</p>
 						</div>
 						<div class="w-full md:w-1/2 px-3">
 							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
 								Gambar
 							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="file" placeholder="Doe">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="image" name="image" type="file" placeholder="Doe">
 						</div>
 					</div>
 					<div class="flex flex-wrap -mx-3 mb-6">
@@ -44,7 +44,7 @@
 							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
 								Kategori
 							</label>
-							<select class="block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+							<select class="block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category" name="category">
 								<option>New Mexico</option>
 								<option>Missouri</option>
 								<option>Texas</option>
@@ -58,7 +58,7 @@
 								Status Device
 							</label>
 							<div class="relative">
-								<select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+								<select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="status" name="status">
 									<option>ON</option>
 									<option>OFF</option>
 								</select>
@@ -71,10 +71,10 @@
 							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
 								Jumlah
 							</label>
-							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="number" placeholder="1">
+							<input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="jumlah" name="jumlah" type="number" placeholder="1">
 						</div>
 					</div>
-					<button type="submit" class="bg-blue-500 px-4 py-2 text-white rounded-md mt-4">Simpan</button>
+					<button type="submit" name="btnSubmit" id="btnSubmit" class="bg-blue-500 px-4 py-2 text-white rounded-md mt-4">Simpan</button>
 				</form>
 			</div>
 		</div>

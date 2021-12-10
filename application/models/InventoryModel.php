@@ -50,12 +50,33 @@
         }
 
         public function insert(){
-            $sql = sprintf("INSERT INTO inventories(name) VALUES('%s')",
-                $this->name
+            $sql = sprintf("INSERT INTO inventories(name, category, device_status, jumlah) VALUES('%s', '%s', '%d', '%d')",
+                $this->name,
+                $this->category,
+                $this->device_status,
+                $this->jumlah
             );
 
             $this->db->query($sql);
         }
+
+        public function update(){
+            $sql = sprintf("UPDATE inventories SET name='%s', category='%s', device_status='%d', jumlah='%d' WHERE id='%s' ",
+                $this->name,
+                $this->category,
+                $this->device_status,
+                $this->jumlah
+            );
+
+            $this->db->query($sql);
+        }
+
+
+        public function delete($kode){
+            $sql = sprintf("DELETE FROM inventories WHERE id='%s'", $kode);
+            $this->db->query($sql);
+        }
+
         public function _attributeLabels(){
 		return [
 			'id' => 'ID: ',
