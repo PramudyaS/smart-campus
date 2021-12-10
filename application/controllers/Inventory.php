@@ -104,7 +104,7 @@ class Inventory extends CI_Controller {
              $spreadsheet->setActiveSheetIndex(0)
                          ->setCellValue('A' . $kolom, $inventory->name)
                          ->setCellValue('B' . $kolom, $inventory->category)
-                         ->setCellValue('C' . $kolom, $inventory->device_status)
+                         ->setCellValue('C' . $kolom, ($inventory->device_status == 1 ? 'ON' : 'OFF'))
                          ->setCellValue('D' . $kolom, $inventory->jumlah);
 
              $kolom++;

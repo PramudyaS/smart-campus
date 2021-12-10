@@ -23,7 +23,7 @@
                 <?= $row->category;?>
             </td>
             <td>
-                <?= $row->device_status;?>
+                <?= $row->device_status == 1 ? 'ON' : 'OFF' ?>
             </td>
             <td>
                 <?= $row->jumlah;?>
